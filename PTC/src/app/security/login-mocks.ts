@@ -1,9 +1,19 @@
-import { AppUserAuth } from "./app-user-auth";
+import { AppUserAuth } from './app-user-auth';
 
 export const LOGIN_MOCKS: AppUserAuth[] = [
   {
-    userName: "PSheriff",
-    bearerToken: "abi393kdkd9393ikd",
+    userName: 'mpandian',
+    bearerToken: 'sd9f923k3kdmcjkd3sdf23sdf3',
+    isAuthenticated: true,
+    canAccessProducts: true,
+    canAddProduct: false,
+    canSaveProduct: false,
+    canAccessCategories: true,
+    canAddCategory: true
+  },
+  {
+    userName: 'PSheriff',
+    bearerToken: 'abi393kdkd9393ikd',
     isAuthenticated: true,
     canAccessProducts: true,
     canAddProduct: true,
@@ -12,8 +22,8 @@ export const LOGIN_MOCKS: AppUserAuth[] = [
     canAddCategory: false
   },
   {
-    userName: "BJones",
-    bearerToken: "sd9f923k3kdmcjkhd",
+    userName: 'BJones',
+    bearerToken: 'sd9f923k3kdmcjkhd',
     isAuthenticated: true,
     canAccessProducts: true,
     canAddProduct: false,
