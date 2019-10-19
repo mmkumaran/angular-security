@@ -1,0 +1,19 @@
+{
+  "FilePath": "d:\\workspace\\Angular-security\\demo-angular6\\PTCApi\\PTCApi.csproj",
+  "Configuration": {
+    "ConfigurationName": "MVC-2.1",
+    "LanguageVersion": "2.1",
+    "Extensions": [
+      {
+        "ExtensionName": "MVC-2.1"
+      }
+    ]
+  },
+  "ProjectWorkspaceState": {
+    "TagHelpers": [],
+    "CSharpLanguageVersion": 800
+  },
+  "RootNamespace": "PTCApi",
+  "Documents": [],
+  "SerializationFormat": "0.2"
+}
