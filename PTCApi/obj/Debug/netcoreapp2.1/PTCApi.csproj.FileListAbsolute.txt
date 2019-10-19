@@ -21,10 +21,10 @@ D:\workspace\Angular-security\demo-angular6\PTCApi\bin\Debug\netcoreapp2.1\PTCAp
 D:\workspace\Angular-security\demo-angular6\PTCApi\bin\Debug\netcoreapp2.1\PTCApi.dll
 D:\workspace\Angular-security\demo-angular6\PTCApi\bin\Debug\netcoreapp2.1\PTCApi.pdb
 D:\workspace\Angular-security\demo-angular6\PTCApi\obj\Debug\netcoreapp2.1\PTCApi.csprojAssemblyReference.cache
-D:\workspace\Angular-security\demo-angular6\PTCApi\obj\Debug\netcoreapp2.1\PTCApi.RazorAssemblyInfo.cache
-D:\workspace\Angular-security\demo-angular6\PTCApi\obj\Debug\netcoreapp2.1\PTCApi.RazorAssemblyInfo.cs
 D:\workspace\Angular-security\demo-angular6\PTCApi\obj\Debug\netcoreapp2.1\PTCApi.AssemblyInfoInputs.cache
 D:\workspace\Angular-security\demo-angular6\PTCApi\obj\Debug\netcoreapp2.1\PTCApi.AssemblyInfo.cs
-D:\workspace\Angular-security\demo-angular6\PTCApi\obj\Debug\netcoreapp2.1\PTCApi.RazorTargetAssemblyInfo.cache
 D:\workspace\Angular-security\demo-angular6\PTCApi\obj\Debug\netcoreapp2.1\PTCApi.dll
 D:\workspace\Angular-security\demo-angular6\PTCApi\obj\Debug\netcoreapp2.1\PTCApi.pdb
+d:\workspace\Angular-security\demo-angular6\PTCApi\obj\Debug\netcoreapp2.1\PTCApi.RazorAssemblyInfo.cache
+d:\workspace\Angular-security\demo-angular6\PTCApi\obj\Debug\netcoreapp2.1\PTCApi.RazorAssemblyInfo.cs
+d:\workspace\Angular-security\demo-angular6\PTCApi\obj\Debug\netcoreapp2.1\PTCApi.RazorTargetAssemblyInfo.cache

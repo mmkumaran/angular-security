@@ -14,21 +14,24 @@ export class LoginComponent implements OnInit {
   securityObject: AppUserAuth = null;
   returnUrl: string;
 
-  constructor(private securityService: SecurityService,
-    private route: ActivatedRoute,
-    private router: Router) { }
+  constructor(private securityService: SecurityService, private route: ActivatedRoute, private router: Router) {}
 
   ngOnInit() {
     this.returnUrl = this.route.snapshot.queryParamMap.get('returnUrl');
   }
 
   login() {
-    this.securityService.login(this.user)
-      .subscribe(resp => {
-      this.securityObject = resp;
+    this.securityService.login(this.user).subscribe(
+      resp => {
+        this.securityObject = resp;
         if (this.returnUrl) {
           this.router.navigateByUrl(this.returnUrl);
         }
-      });
+      },
+      () => {
+        // Initialize security object to display error message
+        this.securityObject = new AppUserAuth();
+      }
+    );
   }
 }
