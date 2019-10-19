@@ -1,11 +1,16 @@
+import { Location } from '@angular/common';
 import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute, Params } from '@angular/router';
-import { Location } from '@angular/common';
 
-import { ProductService } from "./product.service";
-import { Product } from './product';
+import { Observable } from 'rxjs';
+
 import { Category } from '../category/category';
 import { CategoryService } from '../category/category.service';
+import { AppUserAuth } from '../security/app-user-auth';
+import { SecurityService } from '../security/security.service';
+
+import { Product } from './product';
+import { ProductService } from './product.service';
 
 @Component({
   templateUrl: './product-detail.component.html'
@@ -14,11 +19,17 @@ export class ProductDetailComponent implements OnInit {
   product: Product;
   originalProduct: Product;
   categories: Category[];
+  securityObject: AppUserAuth = null;
 
-  constructor(private categoryService: CategoryService,
+  constructor(
+    private categoryService: CategoryService,
     private productService: ProductService,
     private route: ActivatedRoute,
-    private location: Location) { }
+    private location: Location,
+    private securityService: SecurityService
+  ) {
+    this.securityObject = securityService.securityObject;
+  }
 
   ngOnInit() {
     this.getCategories();
@@ -32,14 +43,12 @@ export class ProductDetailComponent implements OnInit {
     if (id == -1) {
       // Create new product object
       this.initProduct();
-    }
-    else {
+    } else {
       // Get a product from product service
-      this.productService.getProduct(id)
-        .subscribe(product => {
-          this.product = product;
-          this.originalProduct = Object.assign({}, this.product)
-        });
+      this.productService.getProduct(id).subscribe(product => {
+        this.product = product;
+        this.originalProduct = Object.assign({}, this.product);
+      });
     }
   }
 
@@ -48,30 +57,34 @@ export class ProductDetailComponent implements OnInit {
     this.product = new Product({
       introductionDate: new Date(),
       price: 1,
-      url: "www.fairwaytech.com"
+      url: 'www.fairwaytech.com'
     });
     this.originalProduct = Object.assign({}, this.product);
   }
 
   private getCategories(): void {
-    this.categoryService.getCategories()
-      .subscribe(categories => this.categories = categories);
+    this.categoryService.getCategories().subscribe(categories => (this.categories = categories));
   }
 
   saveData(): void {
     if (this.product.productId) {
       // Update product
-      this.productService.updateProduct(this.product)
-        .subscribe(product => { this.product = product },
-          () => null,
-          () => this.dataSaved());
-    }
-    else {
+      this.productService.updateProduct(this.product).subscribe(
+        product => {
+          this.product = product;
+        },
+        () => null,
+        () => this.dataSaved()
+      );
+    } else {
       // Add a product
-      this.productService.addProduct(this.product)
-        .subscribe(product => { this.product = product },
-          () => null,
-          () => this.dataSaved());
+      this.productService.addProduct(this.product).subscribe(
+        product => {
+          this.product = product;
+        },
+        () => null,
+        () => this.dataSaved()
+      );
     }
   }
 
